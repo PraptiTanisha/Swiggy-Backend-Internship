@@ -11,14 +11,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Debugging: Check route imports
-console.log("authRoutes:", typeof authRoutes);
-console.log("restaurantRoutes:", typeof restaurantRoutes);
-console.log("menuRoutes:", typeof require("./routes/menuRoutes"));
-console.log("cartRoutes:", typeof require("./routes/cartRoutes"));
-console.log("orderRoutes:", typeof require("./routes/orderRoutes"));
-console.log("adminRoutes:", typeof require("./routes/AdminRoutes"));
-
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/restaurants", restaurantRoutes);

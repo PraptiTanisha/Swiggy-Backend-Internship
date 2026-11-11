@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 const Cart = require("../models/Cart");
-console.log("Cart model:", typeof Cart);
-console.log("Cart.findOne:", typeof Cart.findOne);
-console.log("Cart require:", require("../models/Cart"));
-console.log("Cart keys:", Object.keys(Cart));
-console.log("Cart path:", require.resolve("../models/Cart"));
+
 const Menu = require("../models/Menu");
 // ✅ Add To Cart
 exports.addToCart = async (req, res) => {
@@ -72,7 +68,7 @@ exports.addToCart = async (req, res) => {
     }, 0);
 
     await cart.save();
-
+ 
     res.status(200).json({
       success: true,
       message: "Item added to cart",
